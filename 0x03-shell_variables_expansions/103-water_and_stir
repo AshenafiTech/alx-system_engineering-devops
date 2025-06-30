@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "$(( $(echo "$WATER" | tr 'waetr' 01234 | awk '{print "ibase=5;" $0}' | bc) + $(echo "$STIR" | tr 'triti.' 0123456 | awk '{print "ibase=7;" $0}' | bc) ))" | awk '{n=$1; s="bestchol"; r=""; if(n==0) r=s[1]; while(n){r=substr(s,n%9+1,1) r; n=
