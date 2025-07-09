@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script to transfer a file to a remote server
+
+# Check if we received exactly 4 arguments
+if [ "$#" -ne 4 ]; then
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+    exit 1
+fi
+
+# Assign arguments to variables for readability
+FILE_PATH="$1"
+SERVER_IP="$2"
+USERNAME="$3"
+SSH_KEY="$4"
+
+# Use scp to copy the file to the user's home directory (~) on the remote server
+scp -i "$SSH_KEY" -o StrictHostKeyChecking=no "$FILE_PATH" "$USERNAME@$SERVER_IP:~/"
