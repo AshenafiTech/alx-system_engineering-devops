@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script to install and configure nginx to serve "Hello World!" on /
+
+# Update package index
+apt-get update -y
+
+# Install nginx if not already installed
+apt-get install nginx -y
+
+# Ensure nginx is running using service (not systemctl)
+service nginx start
+
+# Overwrite the default Nginx index page with "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
