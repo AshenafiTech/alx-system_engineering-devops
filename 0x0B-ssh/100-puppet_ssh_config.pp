@@ -1,4 +1,4 @@
-# This Puppet manifest configures the SSH client to use a specific private key and disables password authentication.
+# Puppet manifest: Configures SSH client to use ~/.ssh/school and disables password authentication.
 file { '/etc/ssh/ssh_config':
   ensure  => file,
   owner   => 'root',
