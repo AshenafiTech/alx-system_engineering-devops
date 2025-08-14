@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Script to install and configure nginx to serve "Hello World!" on /
 #!/bin/bash
-sudo apt update
-sudo apt install -y nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html
-sudo systemctl start nginx
-sudo systemctl enable nginx
-sudo systemctl reload nginx
+apt update
+apt install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+systemctl start nginx
+systemctl enable nginx
+systemctl reload nginx
 # Update package index
 apt-get update -y
 
