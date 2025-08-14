@@ -4,9 +4,8 @@
 apt update
 apt install -y nginx
 echo "Hello World!" > /var/www/html/index.html
-systemctl start nginx
-systemctl enable nginx
-systemctl reload nginx
+service nginx start
+service nginx reload
 # Update package index
 apt-get update -y
 
